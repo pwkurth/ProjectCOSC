@@ -17,3 +17,22 @@ company_dict = {"0":"Company", "1":"Booth",
 for numbers in company_dict:                                        #Helps organize the dictionary into a neat table#
     print("{}\t{}".format(numbers,company_dict[numbers]))           #I added \t so it adds a space between, you could easily just space as well#
 
+strings = ("AIG","Baylor","CGG","Citi","EcconMobil","Flow-Cal Inc.",
+           "Global SHop Solutions","Harris Count CTS","HCSS",
+           "Hitachi Consulting", "HP Inc.","INT Inc.","JPMorgan Chase & Co",
+           "Leidos","McKesson","MRE Consulting Ltd.","NetIQ","PROS",
+           "San Jacinto College","SAS","Smartbridge","Sogeti USA",
+            "Southwest Research Institute","The Reynolds and Reynolds Company",
+           "UH Enterprise Systems","U.S. Marine Corps","ValuD Consuting LLC","Wipro")
+newLines = []
+with open("CFSpring2018Employers.csv", "rb") as csvfile:
+    try:
+        for line in csvfile:
+            if any(s in line for s in strings):
+                newLines.append(line)
+    except:
+        pass
+theFile = open("CFSpring2018Employers-out.csv","w")
+for line in newLines:
+    theFile.write(line)
+theFile.close()
