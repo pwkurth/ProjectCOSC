@@ -1,5 +1,5 @@
 import csv                                                          #Allows to get csv files#
-file = "CFSpring2018Employers.csv"                                  #Gives the file a value#
+file = "Spring.csv"                                  #Gives the file a value#
 f = open(file, encoding="utf8")                                                      #Basic open and close file reader in python#
 reader = csv.reader(f)
 f.close
@@ -25,3 +25,4 @@ keywords = ("AIG","Baylor","CGG","Citi","EcconMobil","Flow-Cal Inc.",
            "San Jacinto College","SAS","Smartbridge","Sogeti USA",
             "Southwest Research Institute","The Reynolds and Reynolds Company",
            "UH Enterprise Systems","U.S. Marine Corps","ValuD Consuting LLC","Wipro")
+
